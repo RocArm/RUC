@@ -8,6 +8,7 @@
 #' @examples
 #' lapply_rbind( list(a = c(1,2), b =c(3,4)), sum)
 #' lapply_rbind( as.list(cars), function(x) mean(x))
+#' @export
 
 lapply_rbind <- function(X,
                          FUN = function(x){x}){
@@ -19,3 +20,5 @@ lapply_rbind <- function(X,
   list.output <- lapply(X, FUN)
   return( do.call('rbind', list.output) )
 }
+
+#eof
